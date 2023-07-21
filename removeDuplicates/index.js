@@ -1,10 +1,20 @@
+const removeDuplicates = (oldCart) => {
+  const newCart = new Set(oldCart);
 
-const removing_duplicates = (products) => {
-  conso
-} 
+  return Array.from(newCart);
+};
 
+const products = [
+  "item1",
+  "item2",
+  "item3",
+  "item4",
+  "item5",
+  "item1",
+  "item4",
+  "item2",
+];
 
+const cart = removeDuplicates(products);
 
-
-
-const products = ['item1', 'item2', 'item3', 'item4', 'item5', 'item1', 'item4'];
+console.log(cart);
