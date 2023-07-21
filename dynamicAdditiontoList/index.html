@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PW course</title>
+  </head>
+  <body>
+    <h2>What You'll Learn</h2>
+    <ul id="learningItems"></ul>
+    <button id="addButton">Add Item</button>
+    <script>
+      const courseItems = [
+        "HTML and Semantics",
+        "Starting with CSS",
+        "Working Template",
+        "Mobile responsive webpages",
+        "Grid and Flex-box in CSS",
+        "Projects using HTML & CSS",
+        "Version Control and Git",
+        "Getting Started with JavaScript",
+        "Advance JavaScript",
+        "Working with DOM",
+        "Making Projects using HTML, CSS and JavaScript",
+        "Understanding Fundamental of Computer Science",
+        "Getting Started with Database",
+        "Understanding the Database",
+        "Starting with NodeJS and Express",
+        "Understanding React and its Fundamentals",
+        "Understanding Hooks and Routers",
+        "Starting and Completing Full Fledge Projects",
+      ];
+
+      const learningItemsList = document.getElementById("learningItems");
+      const addButton = document.getElementById("addButton");
+      let currentIndex = 0;
+
+      function addNextItem() {
+        if (currentIndex < courseItems.length) {
+          const listItem = document.createElement("li");
+          listItem.textContent = courseItems[currentIndex];
+          learningItemsList.appendChild(listItem);
+          currentIndex++;
+
+          if (currentIndex === courseItems.length) {
+            addButton.disabled = true;
+            addButton.textContent = "All Items Added";
+          }
+        }
+      }
+
+      addButton.addEventListener("click", addNextItem);
+    </script>
+  </body>
+</html>
